@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    color: #222;
+    background-color: #f7f9fc;
+  }
+  h1 {
+    @apply text-4xl mb-4;
+  }
+
+  h3 {
+    @apply text-2xl font-bold mb-2;
+  }
+}
+
+@layer utilities {
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .card {
+    @apply bg-white py-6 px-8 mt-7 max-w-[800px] leading-[1.6];
+  }
+
+  .button {
+    @apply block border-2 border-black py-2 px-5 font-medium cursor-pointer;
+  }
+}
