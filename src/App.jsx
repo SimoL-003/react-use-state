@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { act, useState } from "react";
 import { languages } from "./data/languages"; /* ID, title, description */
 import Card from "./components/Card";
+import Button from "./components/Button";
 
 function App() {
-  const [activeCard, setActiveCard] = useState("");
-  console.log(activeCard);
+  const [activeLanguage, setActiveLanguage] = useState("");
+  console.log(activeLanguage);
 
   return (
     <main className="min-h-screen">
@@ -13,19 +14,21 @@ function App() {
 
         <div className="flex flex-wrap gap-5">
           {languages.map((curLanguage) => (
-            <button
-              onClick={() => {
-                setActiveCard(curLanguage);
-              }}
+            <Button
               key={curLanguage.id}
-              className={`button ${activeCard === curLanguage ? "active" : ""}`}
-            >
-              {curLanguage.title}
-            </button>
+              onClickFunction={() => {
+                setActiveLanguage(curLanguage);
+              }}
+              title={curLanguage.title}
+              isActive={curLanguage === activeLanguage}
+            />
           ))}
         </div>
 
-        <Card title={activeCard.title} description={activeCard.description} />
+        <Card
+          title={activeLanguage.title}
+          description={activeLanguage.description}
+        />
       </div>
     </main>
   );
