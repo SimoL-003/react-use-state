@@ -2,7 +2,7 @@ import { useState } from "react";
 import { languages } from "./data/languages"; /* ID, title, description */
 
 function App() {
-  const [activeCard, setActiveCard] = useState();
+  const [activeCard, setActiveCard] = useState(languages[0]);
   console.log(activeCard);
 
   return (
