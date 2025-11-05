@@ -2,11 +2,10 @@
 
 @layer base {
   body {
-    color: #222;
-    background-color: #f7f9fc;
+    @apply text-neutral-900 bg-slate-100 dark:text-neutral-300 dark:bg-slate-800;
   }
   h1 {
-    @apply text-4xl mb-4;
+    @apply text-4xl mb-4 font-bold;
   }
 
   h3 {
@@ -21,14 +20,14 @@
   }
 
   .card {
-    @apply bg-white py-6 px-8 mt-7 max-w-[800px] leading-[1.6];
+    @apply bg-white dark:bg-black border-2 border-black dark:border-neutral-300 py-6 px-8 mt-7 max-w-[800px] leading-[1.6] rounded-md;
   }
 
   .button {
-    @apply block border-2 border-black py-2 px-5 font-medium cursor-pointer;
+    @apply block border-2 border-black dark:border-neutral-300 py-2 px-5 font-medium cursor-pointer rounded-md;
   }
 
   .button.active {
-    @apply bg-amber-300;
+    @apply bg-neutral-200 dark:bg-neutral-700;
   }
 }

@@ -21,11 +21,13 @@ function App() {
               }}
               title={curLanguage.title}
               isActive={curLanguage === activeLanguage}
+              color={curLanguage.color}
             />
           ))}
         </div>
 
         <Card
+          color={activeLanguage.color}
           title={activeLanguage.title}
           description={activeLanguage.description}
         />
