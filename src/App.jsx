@@ -2,7 +2,7 @@ import { useState } from "react";
 import { languages } from "./data/languages"; /* ID, title, description */
 
 function App() {
-  const [activeCard, setActiveCard] = useState(languages[0]);
+  const [activeCard, setActiveCard] = useState("");
   console.log(activeCard);
 
   return (
@@ -25,8 +25,11 @@ function App() {
         </div>
 
         <div className="card">
-          <h3>{activeCard.title}</h3>
-          <p>{activeCard.description}</p>
+          <h3>{activeCard.title || "Nessun linguaggio selezionato"}</h3>
+          <p>
+            {activeCard.description ||
+              "Seleziona un linguaggio per avere ulteriori dettagli"}
+          </p>
         </div>
       </div>
     </main>
