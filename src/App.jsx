@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { languages } from "./data/languages"; /* ID, title, description */
+import Card from "./components/Card";
 
 function App() {
   const [activeCard, setActiveCard] = useState("");
@@ -24,13 +25,7 @@ function App() {
           ))}
         </div>
 
-        <div className="card">
-          <h3>{activeCard.title || "Nessun linguaggio selezionato"}</h3>
-          <p>
-            {activeCard.description ||
-              "Seleziona un linguaggio per avere ulteriori dettagli"}
-          </p>
-        </div>
+        <Card title={activeCard.title} description={activeCard.description} />
       </div>
     </main>
   );
