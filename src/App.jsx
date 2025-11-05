@@ -4,7 +4,7 @@ import Card from "./components/Card";
 import Button from "./components/Button";
 
 function App() {
-  const [activeLanguage, setActiveLanguage] = useState("");
+  const [activeLanguage, setActiveLanguage] = useState(null);
   console.log(activeLanguage);
 
   return (
@@ -20,17 +20,13 @@ function App() {
                 setActiveLanguage(curLanguage);
               }}
               title={curLanguage.title}
-              isActive={curLanguage === activeLanguage}
+              isActive={curLanguage.id === activeLanguage?.id}
               color={curLanguage.color}
             />
           ))}
         </div>
 
-        <Card
-          color={activeLanguage.color}
-          title={activeLanguage.title}
-          description={activeLanguage.description}
-        />
+        <Card activeLanguage={activeLanguage} />
       </div>
     </main>
   );
