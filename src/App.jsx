@@ -17,7 +17,7 @@ function App() {
                 setActiveCard(curLanguage);
               }}
               key={curLanguage.id}
-              className="button"
+              className={`button ${activeCard === curLanguage ? "active" : ""}`}
             >
               {curLanguage.title}
             </button>

@@ -27,4 +27,8 @@
   .button {
     @apply block border-2 border-black py-2 px-5 font-medium cursor-pointer;
   }
+
+  .button.active {
+    @apply bg-amber-300;
+  }
 }
