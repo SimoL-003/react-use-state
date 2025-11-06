@@ -1,18 +1,17 @@
-import { act, useState } from "react";
-import { languages } from "./data/languages"; /* ID, title, description */
+import { useState } from "react";
+import { languages } from "./data/languages"; /* ID, title, description, color */
 import Card from "./components/Card";
 import Button from "./components/Button";
 
 function App() {
   const [activeLanguage, setActiveLanguage] = useState(null);
-  console.log(activeLanguage);
 
   return (
     <main className="min-h-screen">
       <div className="container py-20">
         <h1 className="mb-10">Impara lo sviluppo web</h1>
 
-        <div className="flex flex-wrap gap-5">
+        <div className="button-container flex flex-wrap gap-5">
           {languages.map((curLanguage) => (
             <Button
               key={curLanguage.id}
